@@ -19,12 +19,25 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
+  position:relative;
   margin:0;
   font-family:var(--font-body);
   color:var(--ink);
   background:var(--cream);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+}
+
+/* Subtle film-grain texture over the whole page for a less "flat" feel */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9000;
+  pointer-events:none;
+  opacity:.035;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -48,25 +61,34 @@ p{margin:0 0 1em}
 
 /* ---------- Buttons ---------- */
 .btn{
-  display:inline-block;padding:14px 30px;border-radius:var(--radius);
-  font-weight:600;text-decoration:none;transition:transform .15s ease, opacity .15s ease;
+  display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:var(--radius);
+  font-weight:600;text-decoration:none;transition:transform .15s ease, opacity .15s ease, box-shadow .2s ease;
   border:1px solid transparent;
 }
 .btn:hover{transform:translateY(-2px)}
-.btn--primary{background:var(--gold);color:var(--charcoal)}
+.btn--primary{background:var(--gold);color:var(--charcoal);box-shadow:0 10px 30px -12px rgba(201,151,62,.55)}
 .btn--primary:hover{background:var(--gold-dim)}
 .btn--ghost{border-color:currentColor;color:inherit}
+.btn__arrow{display:inline-block;transition:transform .2s ease}
+.btn:hover .btn__arrow{transform:translateX(4px)}
 
 /* ---------- Header ---------- */
 .site-header{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:rgba(21,19,15,.72);
   backdrop-filter:blur(8px);
+  transition:background .3s ease, box-shadow .3s ease;
+}
+.site-header.is-scrolled{
+  background:rgba(21,19,15,.94);
+  box-shadow:0 8px 24px -12px rgba(0,0,0,.5);
 }
 .site-header__inner{
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 24px;
+  transition:padding .3s ease;
 }
+.site-header.is-scrolled .site-header__inner{padding:9px 24px}
 .logo img{height:36px;width:auto;color:var(--cream)}
 .nav__list{
   list-style:none;display:flex;gap:2.2rem;margin:0;padding:0;align-items:center;
@@ -92,7 +114,10 @@ p{margin:0 0 1em}
 }
 .hero__media{
   position:absolute;inset:0;background-size:cover;background-position:center;
-  transform:scale(1.02);
+  transform:scale(1.02);overflow:hidden;
+}
+.hero__media video{
+  width:100%;height:100%;object-fit:cover;display:block;
 }
 .hero__scrim{
   position:absolute;inset:0;
@@ -100,6 +125,63 @@ p{margin:0 0 1em}
 }
 .hero__content{position:relative;z-index:1;max-width:680px;padding-top:120px}
 .hero__lede{font-size:1.15rem;color:var(--cream-dim);max-width:46ch}
+
+/* ---- Marquee strip along the bottom edge of the hero ---- */
+.marquee{
+  position:absolute;left:0;right:0;bottom:0;z-index:1;
+  background:rgba(21,19,15,.85);border-top:1px solid rgba(255,255,255,.08);
+  overflow:hidden;padding:14px 0;backdrop-filter:blur(4px);
+}
+.marquee__track{
+  display:flex;gap:1.2em;white-space:nowrap;width:max-content;
+  animation:marquee 26s linear infinite;
+  color:var(--cream-dim);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+}
+.marquee__track span:nth-child(2n){color:var(--gold);font-size:.6rem}
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---- Stats band ---- */
+.stats{background:var(--charcoal);color:var(--cream);padding:64px 0}
+.stats__grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center;
+}
+.stat__number{
+  font-family:var(--font-display);font-size:clamp(2.4rem,5vw,3.4rem);font-weight:600;color:var(--gold);
+  margin:0;line-height:1;
+}
+.stat__label{color:var(--cream-dim);margin:.6em 0 0;font-size:.95rem;max-width:28ch;margin-inline:auto}
+
+/* ---- Featured portfolio case ---- */
+.featured-case{
+  position:relative;display:block;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:16/8;margin:2rem 0 2.5rem;cursor:pointer;background:var(--charcoal);
+}
+.featured-case img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.featured-case:hover img{transform:scale(1.04)}
+.featured-case__overlay{
+  position:absolute;inset:0;color:var(--cream);
+  background:linear-gradient(90deg, rgba(21,19,15,.88) 0%, rgba(21,19,15,.35) 55%, transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:36px;
+}
+.featured-case__overlay h3{font-size:clamp(1.4rem,3vw,2rem);margin:.3em 0 .2em;max-width:16ch}
+.featured-case__overlay p{max-width:42ch;color:var(--cream-dim);margin:0}
+
+/* ---- Floating WhatsApp button ---- */
+.whatsapp-float{
+  position:fixed;right:22px;bottom:22px;z-index:150;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 24px -8px rgba(0,0,0,.5);
+  animation:pulse 2.6s ease-in-out infinite;
+}
+.whatsapp-float:hover{animation-play-state:paused;transform:scale(1.06)}
+@keyframes pulse{
+  0%,100%{box-shadow:0 10px 24px -8px rgba(0,0,0,.5), 0 0 0 0 rgba(37,211,102,.5)}
+  50%{box-shadow:0 10px 24px -8px rgba(0,0,0,.5), 0 0 0 10px rgba(37,211,102,0)}
+}
 
 /* ---------- Sections ---------- */
 .section{padding:100px 0}
@@ -199,6 +281,10 @@ p{margin:0 0 1em}
 }
 
 @media (max-width:760px){
+  .marquee__track{font-size:.7rem}
+  .whatsapp-float{width:50px;height:50px;right:16px;bottom:16px}
+  .featured-case{aspect-ratio:4/5}
+  .featured-case__overlay{background:linear-gradient(180deg, rgba(21,19,15,.15) 0%, rgba(21,19,15,.92) 75%)}
   .nav{
     position:fixed;top:66px;left:0;right:0;background:var(--charcoal);
     max-height:0;overflow:hidden;transition:max-height .3s ease;
@@ -217,4 +303,7 @@ p{margin:0 0 1em}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
   .portfolio-card img{transition:none}
+  .marquee__track{animation:none}
+  .whatsapp-float{animation:none}
+  .hero__media video{display:none}
 }
