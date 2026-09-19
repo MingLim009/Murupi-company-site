@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murupi Produções — Eventos e Publicidade</title>
+<meta name="description" content="Murupi Produções: produção de eventos ao vivo, campanhas publicitárias e ativações de marca.">
+<link rel="icon" type="image/svg+xml" href="assets/img/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header" id="topo">
+  <div class="container site-header__inner">
+    <a href="#topo" class="logo" aria-label="Murupi Produções — início">
+      <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="150" height="42">
+    </a>
+
+    <nav class="nav" id="nav-principal">
+      <ul class="nav__list">
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#o-que-fazemos">O Que Fazemos</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato" class="nav__cta">Fale Conosco</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <section class="hero">
+    <div class="hero__media" style="background-image:url('assets/img/hero-bg.jpg')"></div>
+    <div class="hero__scrim"></div>
+    <div class="container hero__content reveal">
+      <p class="eyebrow">Produção de eventos &amp; publicidade</p>
+      <h1>A produção por trás do que marca presença.</h1>
+      <p class="hero__lede">Shows, campanhas e ativações de marca — do primeiro rascunho ao dia do evento.</p>
+      <a href="#portfolio" class="btn btn--primary">Ver portfólio</a>
+    </div>
+  </section>
+
+  <section id="quem-somos" class="section">
+    <div class="container section-grid reveal">
+      <div class="section-grid__text">
+        <p class="eyebrow">Quem somos</p>
+        <h2>Produção com histórico, feita sob medida.</h2>
+        <!-- EDITAR: confirmar com a Murupi o texto final de missão/valores e ajustar conforme a identidade da empresa. -->
+        <p>A Murupi Produções nasceu do trabalho de campo: mais de 200 shows ao vivo produzidos com artistas e bandas cover, uma campanha de utilidade pública para a Prefeitura do Rio e uma agenda constante de eventos automotivos, incluindo a linha Madame Boxer. É essa experiência prática — de palco, rua e pista — que orienta cada projeto novo.</p>
+        <p>Cada produção passa pelas mesmas mãos, do planejamento à execução no dia do evento, o que mantém o padrão de qualidade constante e a comunicação direta com quem contrata.</p>
+        <ul class="values">
+          <li><strong>Capricho na produção</strong> — cada detalhe do evento tratado com atenção, do início ao fim.</li>
+          <li><strong>Compromisso com prazos</strong> — cronograma combinado é cronograma cumprido.</li>
+          <li><strong>Proximidade com o cliente</strong> — comunicação direta, sem intermediários.</li>
+        </ul>
+      </div>
+      <div class="section-grid__media">
+        <img src="assets/img/portfolio/shows-2.jpg" alt="Produção de show ao vivo" loading="lazy" width="1200" height="675">
+      </div>
+    </div>
+  </section>
+
+  <section id="o-que-fazemos" class="section section--tinted">
+    <div class="container reveal">
+      <p class="eyebrow">O que fazemos</p>
+      <h2>Serviços de produção de eventos e publicidade.</h2>
+
+      <div class="services">
+        <article class="service-card">
+          <h3>Shows e eventos ao vivo</h3>
+          <p>Produção completa de shows: contratação, palco, som, iluminação e logística do dia do evento.</p>
+        </article>
+        <article class="service-card">
+          <h3>Campanhas publicitárias</h3>
+          <p>Criação e produção de campanhas para mídia urbana, impressos e materiais institucionais.</p>
+        </article>
+        <article class="service-card">
+          <h3>Eventos automotivos</h3>
+          <p>Curadoria e produção de encontros de veículos clássicos, do credenciamento às ativações de marca.</p>
+        </article>
+        <article class="service-card">
+          <h3>Ativação de marca</h3>
+          <p>Presença de marca em eventos: identidade visual aplicada, materiais de ponto de venda e experiência do público.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <div class="container reveal">
+      <p class="eyebrow">Eventos e campanhas realizadas</p>
+      <h2>Portfólio</h2>
+
+      <div class="portfolio-filters" role="tablist" aria-label="Filtrar portfólio por categoria">
+        <button class="filter is-active" data-filter="todos" role="tab" aria-selected="true">Todos</button>
+        <button class="filter" data-filter="shows" role="tab" aria-selected="false">Shows</button>
+        <button class="filter" data-filter="campanhas" role="tab" aria-selected="false">Campanhas</button>
+        <button class="filter" data-filter="carros" role="tab" aria-selected="false">Carros Antigos</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+    </div>
+  </section>
+
+  <section id="contato" class="section section--dark">
+    <div class="container contato reveal">
+      <p class="eyebrow">Fale conosco</p>
+      <h2>Vamos produzir o seu próximo evento.</h2>
+      <!-- EDITAR: confirmar número de WhatsApp, e-mail e redes sociais reais da Murupi antes de publicar. -->
+      <div class="contato__links">
+        <a class="btn btn--primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn--ghost" href="mailto:contato@murupiproducoes.com.br">contato@murupiproducoes.com.br</a>
+        <a class="btn btn--ghost" href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">@murupiproducoes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="120" height="34" class="footer-logo">
+    <p>&copy; <span id="ano-atual"></span> Murupi Produções. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
+  <figure class="lightbox__content">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+
+<script src="js/portfolio-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
