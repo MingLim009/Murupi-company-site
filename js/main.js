@@ -241,6 +241,40 @@
     if (e.key === "ArrowRight") stepLightbox(1);
   });
 
+  /* ---- Formulário de contato: monta a mensagem e abre WhatsApp ou e-mail ---- */
+  var contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    var waNumber = contactForm.dataset.whatsapp;
+    var contactEmail = contactForm.dataset.email;
+
+    contactForm.querySelectorAll("button[data-action]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (!contactForm.reportValidity()) return;
+
+        var nome = contactForm.nome.value.trim();
+        var tipo = contactForm.tipo.value;
+        var data = contactForm.data.value.trim();
+        var mensagem = contactForm.mensagem.value.trim();
+
+        var linhas = [
+          "Olá! Meu nome é " + nome + ".",
+          "Tipo de evento: " + tipo,
+          data ? "Data prevista: " + data : null,
+          "Mensagem: " + mensagem
+        ].filter(Boolean);
+        var texto = linhas.join("\n");
+
+        if (btn.dataset.action === "whatsapp") {
+          window.open("https://wa.me/" + waNumber + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+        } else {
+          var assunto = "Contato pelo site — " + tipo;
+          window.location.href = "mailto:" + contactEmail + "?subject=" + encodeURIComponent(assunto) + "&body=" + encodeURIComponent(texto);
+        }
+      });
+    });
+  }
+
   /* ---- Vídeos: botão de play sobre o pôster; só um vídeo toca por vez ---- */
   var videoCards = document.querySelectorAll(".video-card");
   videoCards.forEach(function (card) {

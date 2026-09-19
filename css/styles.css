@@ -184,6 +184,24 @@ p{margin:0 0 1em}
 }
 .stat__label{color:var(--cream-dim);margin:.7em auto 0;font-size:.95rem;max-width:28ch}
 
+/* ---------- Trust strip ---------- */
+.trust{padding:36px 0;background:var(--cream-dim);border-bottom:1px solid var(--border)}
+.trust__inner{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px}
+.trust__label{
+  margin:0;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;color:var(--ink-soft);
+  white-space:nowrap;
+}
+.trust__logos{display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px}
+.trust__item{
+  display:flex;flex-direction:column;color:var(--ink-soft);font-weight:600;font-size:.98rem;line-height:1.3;
+  opacity:.75;filter:grayscale(1);transition:opacity .2s ease, filter .2s ease;
+}
+.trust__item:hover{opacity:1;filter:none}
+.trust__item small{font-weight:500;font-size:.72rem;color:var(--ink-soft);text-transform:none;letter-spacing:0}
+.trust__item--logo{height:34px;width:auto;filter:grayscale(1) contrast(1.05);opacity:.8}
+.trust__item--logo:hover{filter:none;opacity:1}
+.trust__divider{width:1px;height:32px;background:var(--border)}
+
 /* ---------- Sections ---------- */
 .section{padding:110px 0}
 .section--tinted{background:var(--cream-dim)}
@@ -377,11 +395,46 @@ p{margin:0 0 1em}
 .lightbox__nav--prev{left:22px}
 .lightbox__nav--next{right:22px}
 
-/* ---------- Contato ---------- */
-.contato{
-  display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;
+/* ---------- FAQ ---------- */
+.faq-list{display:grid;gap:14px;max-width:860px}
+.faq-item{
+  background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);
+  padding:6px 24px;
 }
-.contato__text h2{margin-bottom:.6em}
+.faq-item summary{
+  padding:18px 0;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:32px;
+  font-family:var(--font-display);font-size:1.05rem;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"+";position:absolute;right:0;top:16px;font-size:1.3rem;color:var(--gold-dim);
+  transition:transform .2s ease;line-height:1;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{color:var(--ink-soft);padding-bottom:20px;margin:0;max-width:70ch}
+
+/* ---------- Contato ---------- */
+.contato-grid{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start;
+}
+.contact-form{
+  background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);
+  padding:32px;display:grid;gap:18px;box-shadow:var(--shadow);
+}
+.contact-form__row{display:grid;gap:6px}
+.contact-form__row label{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.contact-form input,.contact-form select,.contact-form textarea{
+  font-family:var(--font-body);font-size:1rem;padding:12px 14px;border:1px solid var(--border);
+  border-radius:var(--radius);background:var(--cream);color:var(--ink);width:100%;resize:vertical;
+}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-soft);
+}
+.contact-form__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.contact-form__actions .btn{border:none;cursor:pointer}
+.contact-form__actions .btn--ghost{border:1px solid var(--border)}
+.contact-form__note{font-size:.82rem;color:var(--ink-soft);margin:4px 0 0}
+.contact-form__note a{color:var(--gold-dim)}
 .contact-card{
   background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);
   box-shadow:var(--shadow);overflow:hidden;
@@ -424,8 +477,20 @@ p{margin:0 0 1em}
   padding-top:24px;font-size:.85rem;
 }
 .site-footer__bottom p{margin:0}
+.site-footer__legal{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.site-footer__legal a{color:var(--cream-dim);text-decoration:none}
+.site-footer__legal a:hover{color:var(--gold)}
 .site-footer__top{color:var(--cream-dim);text-decoration:none}
 .site-footer__top:hover{color:var(--gold)}
+
+/* ---------- Legal pages (privacidade / termos) ---------- */
+.legal-page{padding-top:150px}
+.legal-page__content{max-width:760px}
+.legal-page__updated{color:var(--ink-soft);font-size:.9rem;margin-bottom:2.5em}
+.legal-page h1{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.legal-page h2{font-size:1.25rem;margin-top:1.6em}
+.legal-page p{color:var(--ink-soft)}
+.legal-page a{color:var(--gold-dim)}
 
 /* ---------- Floating WhatsApp button ---------- */
 .whatsapp-float{
@@ -458,7 +523,7 @@ p{margin:0 0 1em}
   .section-grid{grid-template-columns:1fr;gap:56px}
   .about-media{order:-1;padding:0 24px 40px 0}
   .section-head{grid-template-columns:1fr;gap:12px;align-items:start}
-  .contato{grid-template-columns:1fr;gap:40px}
+  .contato-grid{grid-template-columns:1fr;gap:40px}
   .portfolio-grid{grid-template-columns:repeat(2,1fr)}
   .stats__grid{grid-template-columns:1fr;gap:28px}
   .stat{border-left:none;border-top:1px solid rgba(255,255,255,.1);padding-top:28px}
@@ -489,6 +554,14 @@ p{margin:0 0 1em}
   .portfolio-grid{grid-template-columns:1fr}
   .video-grid{grid-template-columns:1fr 1fr;gap:14px}
   .about-media__badge{left:0;right:auto;top:16px;bottom:auto}
+  .trust__inner{flex-direction:column;align-items:flex-start;gap:14px}
+  .trust__divider{display:none}
+  .faq-item summary{font-size:.98rem}
+  .contact-form{padding:24px 20px}
+  .contact-form__actions{flex-direction:column}
+  .contact-form__actions .btn{width:100%;justify-content:center}
+  .legal-page{padding-top:110px}
+  .site-footer__bottom{flex-direction:column;gap:16px}
   .lightbox{padding:70px 12px 40px}
   .lightbox__nav{width:42px;height:42px;top:auto;bottom:16px;transform:none}
   .lightbox__nav--prev{left:calc(50% - 56px)}

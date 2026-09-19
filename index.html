@@ -13,11 +13,34 @@
 <meta property="og:image" content="https://murupi-producoes.vercel.app/assets/img/og-image.jpg">
 <meta property="og:url" content="https://murupi-producoes.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://murupi-producoes.vercel.app/">
 <link rel="icon" type="image/svg+xml" href="assets/img/brand/favicon.svg">
+<link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<!-- EDITAR: revisar endereço/telefone abaixo (LocalBusiness) quando esses dados forem confirmados com a Murupi. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Murupi Produções",
+  "description": "Produção de shows e eventos ao vivo, campanhas publicitárias, eventos automotivos e ativação de marca.",
+  "url": "https://murupi-producoes.vercel.app/",
+  "image": "https://murupi-producoes.vercel.app/assets/img/og-image.jpg",
+  "logo": "https://murupi-producoes.vercel.app/assets/img/brand/icon-512.png",
+  "email": "contato@murupiproducoes.com.br",
+  "sameAs": ["https://instagram.com/murupiproducoes"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rio de Janeiro",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -35,6 +58,7 @@
         <li><a href="#o-que-fazemos">O Que Fazemos</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
         <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contato" class="nav__cta">Fale Conosco</a></li>
       </ul>
     </nav>
@@ -92,6 +116,18 @@
       <div class="stat">
         <p class="stat__number" data-count-to="3">0</p>
         <p class="stat__label">Frentes de atuação: shows, campanhas e eventos automotivos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONFIANÇA ===================== -->
+  <section class="trust reveal">
+    <div class="container trust__inner">
+      <p class="trust__label">Projetos realizados para</p>
+      <div class="trust__logos">
+        <span class="trust__item">Prefeitura do Rio <small>Secretaria de Direitos Humanos e Igualdade Racial</small></span>
+        <span class="trust__divider" aria-hidden="true"></span>
+        <img class="trust__item trust__item--logo" src="assets/img/brand/madameboxer-logo.jpg" alt="Madame Boxer">
       </div>
     </div>
   </section>
@@ -261,31 +297,104 @@
     </div>
   </section>
 
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="section">
+    <div class="container reveal">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2>Antes de chamar, talvez isso já responda.</h2>
+        </div>
+        <p class="section-head__lede">Se ficar alguma dúvida, é só chamar no WhatsApp — respondemos rápido.</p>
+      </div>
+
+      <div class="faq-list">
+        <!-- EDITAR: revisar respostas com a Murupi, principalmente prazo de resposta, região de atuação e antecedência mínima. -->
+        <details class="faq-item">
+          <summary>Vocês atendem eventos fora do Rio de Janeiro?</summary>
+          <p>Nossa base é o Rio de Janeiro, mas avaliamos projetos em outras cidades dependendo da escala do evento. Conte os detalhes pelo formulário abaixo e respondemos com o que é possível.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Com quanto tempo de antecedência devo entrar em contato?</summary>
+          <p>Quanto antes, melhor — principalmente para shows com artistas específicos ou campanhas com prazo de veiculação definido. Mas conte o seu caso mesmo em cima da data: muitas vezes ainda dá para encaixar.</p>
+        </details>
+        <details class="faq-item">
+          <summary>A Murupi cuida só da produção, ou também ajuda a planejar o evento do zero?</summary>
+          <p>As duas coisas. Se você já tem o evento desenhado, entramos na execução; se está começando do zero, ajudamos a estruturar o conceito, o cronograma e os fornecedores antes de produzir.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês fazem eventos pequenos, ou só produções grandes como as do portfólio?</summary>
+          <p>Fazemos as duas escalas. O portfólio mostra os cases mais visuais, mas atendemos desde ativações pontuais até encontros e shows de grande porte.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o orçamento?</summary>
+          <p>Cada evento é orçado depois do briefing, porque o custo depende de escopo, fornecedores e prazo. Envie os detalhes pelo formulário e retornamos com uma proposta.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== CONTATO ===================== -->
   <section id="contato" class="section section--tinted">
-    <div class="container contato reveal">
-      <div class="contato__text">
-        <p class="eyebrow">Fale conosco</p>
-        <h2>Vamos produzir o seu próximo evento.</h2>
-        <p class="lede">Conte o que você tem em mente — um show, uma campanha, um encontro de carros ou uma ativação de marca. Respondemos com uma proposta clara e um cronograma realista.</p>
+    <div class="container reveal">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Fale conosco</p>
+          <h2>Vamos produzir o seu próximo evento.</h2>
+        </div>
+        <p class="section-head__lede">Conte o que você tem em mente — um show, uma campanha, um encontro de carros ou uma ativação de marca.</p>
       </div>
-      <!-- EDITAR: confirmar número de WhatsApp, e-mail e redes sociais reais da Murupi antes de publicar. -->
-      <div class="contact-card">
-        <a class="contact-card__row" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
-          <span class="contact-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.7c1.8 1 3.9 1.5 6.2 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-4-.6-5.6-1.6l-.4-.2-4.6 1 1-4.5-.3-.5C5 17.4 4.4 16.2 4.4 15 4.4 9.7 9.7 5.4 16 5.4S27.6 9.7 27.6 15 22.3 24.8 16 24.8zm6.1-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C13.4 10.5 13 9.4 12.8 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4z"/></svg></span>
-          <span class="contact-card__body"><span class="contact-card__label">WhatsApp</span><span class="contact-card__value">Chamar no WhatsApp</span></span>
-          <span class="contact-card__arrow">&rarr;</span>
-        </a>
-        <a class="contact-card__row" href="mailto:contato@murupiproducoes.com.br">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></span>
-          <span class="contact-card__body"><span class="contact-card__label">E-mail</span><span class="contact-card__value">contato@murupiproducoes.com.br</span></span>
-          <span class="contact-card__arrow">&rarr;</span>
-        </a>
-        <a class="contact-card__row" href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">
-          <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
-          <span class="contact-card__body"><span class="contact-card__label">Instagram</span><span class="contact-card__value">@murupiproducoes</span></span>
-          <span class="contact-card__arrow">&rarr;</span>
-        </a>
+
+      <div class="contato-grid">
+        <!-- EDITAR: número de WhatsApp abaixo (mesmo usado no botão flutuante e no card ao lado). -->
+        <form class="contact-form" id="contact-form" data-whatsapp="5500000000000" data-email="contato@murupiproducoes.com.br">
+          <div class="contact-form__row">
+            <label for="cf-nome">Nome</label>
+            <input type="text" id="cf-nome" name="nome" required autocomplete="name">
+          </div>
+          <div class="contact-form__row">
+            <label for="cf-tipo">Tipo de evento</label>
+            <select id="cf-tipo" name="tipo" required>
+              <option value="" disabled selected>Selecione…</option>
+              <option value="Show / evento ao vivo">Show / evento ao vivo</option>
+              <option value="Campanha publicitária">Campanha publicitária</option>
+              <option value="Evento automotivo">Evento automotivo</option>
+              <option value="Ativação de marca">Ativação de marca</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="contact-form__row">
+            <label for="cf-data">Data prevista (se souber)</label>
+            <input type="text" id="cf-data" name="data" placeholder="Ex.: novembro de 2026" autocomplete="off">
+          </div>
+          <div class="contact-form__row">
+            <label for="cf-mensagem">Conte um pouco do projeto</label>
+            <textarea id="cf-mensagem" name="mensagem" rows="4" required></textarea>
+          </div>
+          <div class="contact-form__actions">
+            <button type="submit" class="btn btn--primary" data-action="whatsapp">Enviar pelo WhatsApp <span class="btn__arrow">&rarr;</span></button>
+            <button type="submit" class="btn btn--ghost" data-action="email">Enviar por e-mail</button>
+          </div>
+          <p class="contact-form__note">Nada é enviado para nenhum servidor: o formulário só monta a mensagem e abre o WhatsApp ou o seu e-mail para você enviar. Veja a <a href="privacidade.html">Política de Privacidade</a>.</p>
+        </form>
+
+        <div class="contact-card">
+          <a class="contact-card__row" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+            <span class="contact-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.7c1.8 1 3.9 1.5 6.2 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-4-.6-5.6-1.6l-.4-.2-4.6 1 1-4.5-.3-.5C5 17.4 4.4 16.2 4.4 15 4.4 9.7 9.7 5.4 16 5.4S27.6 9.7 27.6 15 22.3 24.8 16 24.8zm6.1-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C13.4 10.5 13 9.4 12.8 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4z"/></svg></span>
+            <span class="contact-card__body"><span class="contact-card__label">WhatsApp</span><span class="contact-card__value">Chamar no WhatsApp</span></span>
+            <span class="contact-card__arrow">&rarr;</span>
+          </a>
+          <a class="contact-card__row" href="mailto:contato@murupiproducoes.com.br">
+            <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="contact-card__body"><span class="contact-card__label">E-mail</span><span class="contact-card__value">contato@murupiproducoes.com.br</span></span>
+            <span class="contact-card__arrow">&rarr;</span>
+          </a>
+          <a class="contact-card__row" href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">
+            <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+            <span class="contact-card__body"><span class="contact-card__label">Instagram</span><span class="contact-card__value">@murupiproducoes</span></span>
+            <span class="contact-card__arrow">&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -304,6 +413,7 @@
       <a href="#o-que-fazemos">O Que Fazemos</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#videos">Vídeos</a>
+      <a href="#faq">FAQ</a>
       <a href="#contato">Contato</a>
     </nav>
     <div class="site-footer__contact">
@@ -315,7 +425,11 @@
   </div>
   <div class="container site-footer__bottom">
     <p>&copy; <span id="ano-atual"></span> Murupi Produções. Todos os direitos reservados.</p>
-    <a href="#topo" class="site-footer__top">Voltar ao topo &uarr;</a>
+    <div class="site-footer__legal">
+      <a href="privacidade.html">Política de Privacidade</a>
+      <a href="termos.html">Termos de Uso</a>
+      <a href="#topo" class="site-footer__top">Voltar ao topo &uarr;</a>
+    </div>
   </div>
 </footer>
 

@@ -1,0 +1,5 @@
+# EDITAR: ao publicar em murupiproducoes.com.br, trocar a URL do Sitemap abaixo.
+User-agent: *
+Allow: /
+
+Sitemap: https://murupi-producoes.vercel.app/sitemap.xml

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade — Murupi Produções</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/img/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header is-scrolled" id="topo">
+  <div class="container site-header__inner">
+    <a href="/" class="logo" aria-label="Murupi Produções — início">
+      <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="150" height="47">
+    </a>
+    <nav class="nav" id="nav-principal">
+      <ul class="nav__list">
+        <li><a href="/#quem-somos">Quem Somos</a></li>
+        <li><a href="/#o-que-fazemos">O Que Fazemos</a></li>
+        <li><a href="/#portfolio">Portfólio</a></li>
+        <li><a href="/#contato" class="nav__cta">Fale Conosco</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="section legal-page">
+    <div class="container legal-page__content">
+      <p class="eyebrow">Política de Privacidade</p>
+      <h1>Como tratamos os seus dados</h1>
+      <p class="legal-page__updated">Última atualização: 19 de setembro de 2026.</p>
+
+      <p>Este site pertence à Murupi Produções e foi construído como uma página estática simples, sem servidor próprio de armazenamento de dados. Este documento explica, de forma direta, o que acontece com as informações de quem visita ou entra em contato pelo site.</p>
+
+      <h2>1. Este site não guarda os seus dados</h2>
+      <p>O formulário de contato não envia informações para nenhum banco de dados da Murupi. Ao preencher o formulário, o próprio navegador monta uma mensagem com o que você escreveu e abre o WhatsApp ou o aplicativo de e-mail para que você mesmo envie essa mensagem. A partir daí, a conversa passa a acontecer dentro do WhatsApp ou do e-mail — serviços de terceiros, cada um com sua própria política de privacidade.</p>
+
+      <h2>2. Cookies</h2>
+      <p>Esta versão do site não usa cookies de rastreamento nem ferramentas de analytics de terceiros. Se isso mudar no futuro (por exemplo, com a adição de uma ferramenta de estatísticas de visitas), esta política será atualizada para refletir o que passar a ser coletado.</p>
+
+      <h2>3. Seus direitos (LGPD)</h2>
+      <p>Se você já enviou uma mensagem para a Murupi por WhatsApp ou e-mail, pode a qualquer momento pedir para saber quais informações a empresa guardou sobre essa conversa, corrigi-las ou solicitar sua exclusão. Basta enviar esse pedido para o e-mail de contato abaixo.</p>
+
+      <h2>4. Contato</h2>
+      <p>Dúvidas sobre esta política podem ser enviadas para <a href="mailto:contato@murupiproducoes.com.br">contato@murupiproducoes.com.br</a>.</p>
+
+      <!-- EDITAR: este texto é um rascunho direto e honesto sobre o que o site faz hoje.
+           Se no futuro o site passar a ter formulário com envio para servidor, newsletter,
+           ou ferramentas de analytics, esta política precisa ser atualizada (idealmente
+           com apoio jurídico) para cobrir esses novos usos de dados. -->
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__bottom">
+    <p>&copy; <span id="ano-atual"></span> Murupi Produções. Todos os direitos reservados.</p>
+    <a href="/" class="site-footer__top">Voltar ao início</a>
+  </div>
+</footer>
+
+<script>document.getElementById('ano-atual').textContent = new Date().getFullYear();</script>
+</body>
+</html>

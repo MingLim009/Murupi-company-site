@@ -7,16 +7,48 @@ de hospedagem para a raiz do domínio `murupiproducoes.com.br`.
 ## Estrutura
 
 ```
-index.html              → todo o conteúdo e a estrutura das seções
+index.html              → página principal (todas as seções)
+privacidade.html        → Política de Privacidade
+termos.html             → Termos de Uso
+404.html                → página exibida quando um link quebrado é acessado
+manifest.json           → metadados de "instalar como app" (ícone, cor)
+robots.txt, sitemap.xml → arquivos técnicos de SEO
 css/styles.css          → cores, tipografia, layout
-js/main.js              → menu mobile, filtros do portfólio, lightbox
+js/main.js              → menu mobile, filtros do portfólio, lightbox, FAQ, formulário
 js/portfolio-data.js    → lista de cases do portfólio (ver abaixo)
-assets/img/brand/       → logo e favicon
+assets/img/brand/       → logo, favicon e ícones (inclui icon-192.png, icon-512.png, apple-touch-icon.png)
 assets/img/portfolio/   → fotos do portfólio
 assets/img/video/       → capas (pôsteres) dos vídeos
 assets/img/og-image.jpg → imagem de compartilhamento (WhatsApp, redes sociais)
 assets/video/           → vídeos (loop do topo + showreel + eventos)
 ```
+
+## Formulário de contato
+
+O formulário na seção "Fale Conosco" não envia dados para nenhum servidor — ele
+monta o texto digitado e abre o WhatsApp (botão "Enviar pelo WhatsApp") ou o
+aplicativo de e-mail (botão "Enviar por e-mail") já com a mensagem pronta. Isso
+mantém o site 100% estático, sem precisar de backend, conta em serviço de
+formulário ou custo extra.
+
+O número de WhatsApp usado pelo formulário está no atributo `data-whatsapp` da
+tag `<form id="contact-form">`, em `index.html` — é o mesmo número que deve ser
+atualizado em todos os outros lugares marcados com `EDITAR`.
+
+## FAQ
+
+As perguntas ficam direto no `index.html`, dentro de `<section id="faq">`, uma
+por bloco `<details class="faq-item">...</details>`. Para adicionar uma
+pergunta, copie um bloco inteiro e troque o texto do `<summary>` (pergunta) e do
+`<p>` (resposta) — abre/fecha sozinho, sem precisar de JavaScript.
+
+## Política de Privacidade e Termos de Uso
+
+São rascunhos diretos e honestos sobre o que o site faz hoje (o formulário não
+guarda dados em servidor — só abre o WhatsApp/e-mail). Se no futuro o site
+ganhar um formulário que salva dados, uma newsletter ou uma ferramenta de
+analytics, essas páginas precisam ser atualizadas — idealmente com apoio
+jurídico, já que envolvem LGPD.
 
 ## Vídeos
 
