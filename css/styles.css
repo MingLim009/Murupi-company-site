@@ -372,7 +372,7 @@ p{margin:0 0 1em}
 
 /* ---------- Videos ---------- */
 .video-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;align-items:stretch;
+  display:grid;grid-template-columns:1fr 2fr 1fr;gap:40px;align-items:stretch;
 }
 .video-card{
   position:relative;margin:0;width:100%;min-width:0;min-height:0;border-radius:var(--radius);overflow:hidden;background:#000;
@@ -570,7 +570,7 @@ p{margin:0 0 1em}
   .services{grid-template-columns:repeat(2,1fr)}
   .process__grid{grid-template-columns:repeat(2,1fr)}
   .video-grid{grid-template-columns:1fr 1fr}
-  .video-card--wide{grid-column:1 / -1}
+  .video-card--wide{grid-column:1 / -1;order:-1}
   .site-footer__grid{grid-template-columns:1fr 1fr}
 }
 
