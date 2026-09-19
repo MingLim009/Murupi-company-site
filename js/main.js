@@ -5,6 +5,52 @@
   var anoEl = document.getElementById("ano-atual");
   if (anoEl) anoEl.textContent = new Date().getFullYear();
 
+  /* ---- Header muda de aparência ao rolar ---- */
+  var header = document.getElementById("topo");
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle("is-scrolled", window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* ---- Contadores da seção de números ---- */
+  var statNumbers = document.querySelectorAll(".stat__number");
+  function animateCount(el) {
+    var target = parseInt(el.dataset.countTo, 10) || 0;
+    var suffix = el.dataset.suffix || "";
+    var duration = 1200;
+    var start = null;
+
+    function step(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (statNumbers.length && "IntersectionObserver" in window) {
+    var statsIo = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            statsIo.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    statNumbers.forEach(function (el) { statsIo.observe(el); });
+  } else {
+    statNumbers.forEach(function (el) {
+      el.textContent = (el.dataset.countTo || "0") + (el.dataset.suffix || "");
+    });
+  }
+
   /* ---- Menu mobile ---- */
   var toggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("nav-principal");
@@ -122,6 +168,24 @@
     lightbox.hidden = true;
     lightboxImg.src = "";
     document.body.style.overflow = "";
+  }
+
+  var featuredCase = document.getElementById("featured-case");
+  if (featuredCase) {
+    var openFeatured = function () {
+      openLightbox({
+        imagem: "assets/img/portfolio/carros-1.jpg",
+        titulo: "Um encontro, centenas de clássicos",
+        descricao: "Cobertura completa de um dos maiores encontros de carros antigos já produzidos pela Murupi."
+      });
+    };
+    featuredCase.addEventListener("click", openFeatured);
+    featuredCase.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openFeatured();
+      }
+    });
   }
 
   if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
