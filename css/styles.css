@@ -414,7 +414,14 @@ p{margin:0 0 1em}
 }
 .lightbox[hidden]{display:none}
 .lightbox__content{max-width:min(90vw,960px);margin:0;color:#fff}
-.lightbox__content img{border-radius:var(--radius-lg);max-height:74vh;width:auto;margin:0 auto;box-shadow:0 30px 80px -30px rgba(0,0,0,.9)}
+.lightbox__content img{
+  border-radius:var(--radius-lg);max-height:74vh;width:auto;margin:0 auto;
+  border:3px solid #fff;
+  box-shadow:
+    0 0 0 3px #000,
+    0 0 0 6px var(--gold),
+    0 30px 80px -20px rgba(0,0,0,.9);
+}
 .lightbox__content figcaption{text-align:center;margin-top:16px;color:rgba(255,255,255,.7);max-width:70ch;margin-inline:auto}
 .lightbox__close{
   position:absolute;top:22px;right:28px;background:none;border:none;color:#fff;
