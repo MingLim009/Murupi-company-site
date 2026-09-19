@@ -4,7 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Murupi Produções — Eventos e Publicidade</title>
-<meta name="description" content="Murupi Produções: produção de eventos ao vivo, campanhas publicitárias e ativações de marca.">
+<meta name="description" content="Murupi Produções: produção de shows e eventos ao vivo, campanhas publicitárias, eventos automotivos e ativação de marca.">
+<meta name="theme-color" content="#15130f">
+<!-- EDITAR: quando o site for para o domínio final, trocar as URLs abaixo por https://www.murupiproducoes.com.br/... -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Murupi Produções — Eventos e Publicidade">
+<meta property="og:description" content="Shows, campanhas e ativações de marca — do primeiro rascunho ao dia do evento.">
+<meta property="og:image" content="https://murupi-producoes.vercel.app/assets/img/og-image.jpg">
+<meta property="og:url" content="https://murupi-producoes.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/img/brand/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +26,7 @@
 <header class="site-header" id="topo">
   <div class="container site-header__inner">
     <a href="#topo" class="logo" aria-label="Murupi Produções — início">
-      <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="150" height="42">
+      <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="150" height="47">
     </a>
 
     <nav class="nav" id="nav-principal">
@@ -26,6 +34,7 @@
         <li><a href="#quem-somos">Quem Somos</a></li>
         <li><a href="#o-que-fazemos">O Que Fazemos</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#videos">Vídeos</a></li>
         <li><a href="#contato" class="nav__cta">Fale Conosco</a></li>
       </ul>
     </nav>
@@ -38,6 +47,7 @@
 
 <main id="conteudo">
 
+  <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="hero__media" style="background-image:url('assets/img/hero-bg.jpg')">
       <video autoplay muted loop playsinline poster="assets/img/hero-bg.jpg">
@@ -46,10 +56,13 @@
     </div>
     <div class="hero__scrim"></div>
     <div class="container hero__content reveal">
-      <p class="eyebrow">Produção de eventos &amp; publicidade</p>
+      <p class="eyebrow eyebrow--light">Produção de eventos &amp; publicidade</p>
       <h1>A produção por trás do que marca presença.</h1>
       <p class="hero__lede">Shows, campanhas e ativações de marca — do primeiro rascunho ao dia do evento.</p>
-      <a href="#portfolio" class="btn btn--primary">Ver portfólio <span class="btn__arrow">&rarr;</span></a>
+      <div class="hero__actions">
+        <a href="#portfolio" class="btn btn--primary">Ver portfólio <span class="btn__arrow">&rarr;</span></a>
+        <a href="#contato" class="btn btn--ghost btn--ghost-light">Fale conosco</a>
+      </div>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
@@ -65,15 +78,16 @@
     </div>
   </section>
 
+  <!-- ===================== NÚMEROS ===================== -->
   <section class="stats reveal">
     <div class="container stats__grid">
       <div class="stat">
         <p class="stat__number" data-count-to="200" data-suffix="+">0</p>
-        <p class="stat__label">Shows produzidos</p>
+        <p class="stat__label">Shows produzidos com artistas e bandas cover</p>
       </div>
       <div class="stat">
         <p class="stat__number" data-count-to="1">0</p>
-        <p class="stat__label">Campanha para a Prefeitura do Rio</p>
+        <p class="stat__label">Campanha de utilidade pública para a Prefeitura do Rio</p>
       </div>
       <div class="stat">
         <p class="stat__number" data-count-to="3">0</p>
@@ -82,59 +96,99 @@
     </div>
   </section>
 
+  <!-- ===================== QUEM SOMOS ===================== -->
   <section id="quem-somos" class="section">
     <div class="container section-grid reveal">
       <div class="section-grid__text">
         <p class="eyebrow">Quem somos</p>
         <h2>Produção com histórico, feita sob medida.</h2>
         <!-- EDITAR: confirmar com a Murupi o texto final de missão/valores e ajustar conforme a identidade da empresa. -->
-        <p>A Murupi Produções nasceu do trabalho de campo: mais de 200 shows ao vivo produzidos com artistas e bandas cover, uma campanha de utilidade pública para a Prefeitura do Rio e uma agenda constante de eventos automotivos, incluindo a linha Madame Boxer. É essa experiência prática — de palco, rua e pista — que orienta cada projeto novo.</p>
-        <p>Cada produção passa pelas mesmas mãos, do planejamento à execução no dia do evento, o que mantém o padrão de qualidade constante e a comunicação direta com quem contrata.</p>
+        <p class="lede">A Murupi Produções nasceu do trabalho de campo: mais de 200 shows ao vivo produzidos com artistas e bandas cover, uma campanha de utilidade pública para a Prefeitura do Rio e uma agenda constante de eventos automotivos, incluindo a linha Madame Boxer.</p>
+        <p>É essa experiência prática — de palco, rua e pista — que orienta cada projeto novo. Cada produção passa pelas mesmas mãos, do planejamento à execução no dia do evento, o que mantém o padrão de qualidade constante e a comunicação direta com quem contrata.</p>
         <ul class="values">
-          <li><strong>Capricho na produção</strong> — cada detalhe do evento tratado com atenção, do início ao fim.</li>
-          <li><strong>Compromisso com prazos</strong> — cronograma combinado é cronograma cumprido.</li>
-          <li><strong>Proximidade com o cliente</strong> — comunicação direta, sem intermediários.</li>
+          <li><strong>Capricho na produção</strong><span>Cada detalhe do evento tratado com atenção, do início ao fim.</span></li>
+          <li><strong>Compromisso com prazos</strong><span>Cronograma combinado é cronograma cumprido.</span></li>
+          <li><strong>Proximidade com o cliente</strong><span>Comunicação direta, sem intermediários.</span></li>
         </ul>
       </div>
-      <div class="section-grid__media">
-        <img src="assets/img/portfolio/shows-2.jpg" alt="Produção de show ao vivo" loading="lazy" width="1200" height="675">
+      <div class="about-media">
+        <figure class="about-media__main">
+          <img src="assets/img/portfolio/shows-2.jpg" alt="Artista no palco durante show produzido pela Murupi" loading="lazy" width="1200" height="675">
+        </figure>
+        <figure class="about-media__secondary">
+          <img src="assets/img/portfolio/campanha-1.jpg" alt="Peça da campanha Rio Cidade Antirracista em ponto de ônibus" loading="lazy" width="900" height="475">
+        </figure>
+        <div class="about-media__badge">
+          <span class="about-media__badge-number">200+</span>
+          <span class="about-media__badge-label">shows produzidos</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ===================== O QUE FAZEMOS ===================== -->
   <section id="o-que-fazemos" class="section section--tinted">
     <div class="container reveal">
-      <p class="eyebrow">O que fazemos</p>
-      <h2>Serviços de produção de eventos e publicidade.</h2>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">O que fazemos</p>
+          <h2>Serviços de produção de eventos e publicidade.</h2>
+        </div>
+        <p class="section-head__lede">Quatro frentes que se complementam: o mesmo time que produz o show também assina a campanha e a ativação da marca no evento.</p>
+      </div>
 
       <div class="services">
         <article class="service-card">
+          <span class="service-card__index">01</span>
+          <svg class="service-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6a8 8 0 0 0-8 8v10a8 8 0 0 0 16 0V14a8 8 0 0 0-8-8Z"/><path d="M10 22a14 14 0 0 0 28 0M24 36v6m-8 0h16"/></svg>
           <h3>Shows e eventos ao vivo</h3>
-          <p>Produção completa de shows: contratação, palco, som, iluminação e logística do dia do evento.</p>
+          <p>Produção completa: contratação de artistas, palco, som, iluminação e toda a logística do dia do evento.</p>
         </article>
         <article class="service-card">
+          <span class="service-card__index">02</span>
+          <svg class="service-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20v8h6l14 8V12L12 20H6Z"/><path d="M32 18a8 8 0 0 1 0 12m4-18a14 14 0 0 1 0 24"/></svg>
           <h3>Campanhas publicitárias</h3>
-          <p>Criação e produção de campanhas para mídia urbana, impressos e materiais institucionais.</p>
+          <p>Criação e produção de campanhas para mídia urbana, impressos e materiais institucionais, do conceito à peça final.</p>
         </article>
         <article class="service-card">
+          <span class="service-card__index">03</span>
+          <svg class="service-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 28l3-9a4 4 0 0 1 4-3h18a4 4 0 0 1 4 3l3 9v8H8v-8Z"/><path d="M8 28h32M12 36v4m24-4v4"/><circle cx="15" cy="31" r="2"/><circle cx="33" cy="31" r="2"/></svg>
           <h3>Eventos automotivos</h3>
-          <p>Curadoria e produção de encontros de veículos clássicos, do credenciamento às ativações de marca.</p>
+          <p>Curadoria e produção de encontros de veículos clássicos, do credenciamento às ativações durante o evento.</p>
         </article>
         <article class="service-card">
+          <span class="service-card__index">04</span>
+          <svg class="service-card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l4.6 9.4L39 17l-7.5 7.3L33.2 35 24 30.1 14.8 35l1.7-10.7L9 17l10.4-1.6L24 6Z"/></svg>
           <h3>Ativação de marca</h3>
           <p>Presença de marca em eventos: identidade visual aplicada, materiais de ponto de venda e experiência do público.</p>
         </article>
       </div>
+
+      <div class="process">
+        <p class="process__title">Como trabalhamos</p>
+        <ol class="process__steps">
+          <li><span class="process__num">1</span><strong>Briefing</strong><span>Entendemos o objetivo, o público e o orçamento do projeto.</span></li>
+          <li><span class="process__num">2</span><strong>Planejamento</strong><span>Cronograma, fornecedores, identidade visual e aprovação de cada etapa.</span></li>
+          <li><span class="process__num">3</span><strong>Produção</strong><span>Execução com acompanhamento direto de quem planejou.</span></li>
+          <li><span class="process__num">4</span><strong>Dia do evento</strong><span>Operação completa no local, do início ao encerramento.</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
+  <!-- ===================== PORTFÓLIO ===================== -->
   <section id="portfolio" class="section">
     <div class="container reveal">
-      <p class="eyebrow">Eventos e campanhas realizadas</p>
-      <h2>Portfólio</h2>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Eventos e campanhas realizadas</p>
+          <h2>Portfólio</h2>
+        </div>
+        <p class="section-head__lede">Uma seleção de shows, campanhas e eventos produzidos pela Murupi. Clique em qualquer imagem para ampliar.</p>
+      </div>
 
       <div class="featured-case" id="featured-case" role="button" tabindex="0" aria-label="Ver imagem em destaque do portfólio">
-        <img src="assets/img/portfolio/carros-1.jpg" alt="Encontro de carros antigos, vista aérea" loading="lazy">
+        <img src="assets/img/portfolio/carros-1.jpg" alt="Encontro de carros antigos, vista aérea" loading="lazy" width="576" height="1024">
         <div class="featured-case__overlay">
           <span class="portfolio-card__cat">Destaque · Carros Antigos</span>
           <h3>Um encontro, centenas de clássicos.</h3>
@@ -153,15 +207,85 @@
     </div>
   </section>
 
-  <section id="contato" class="section section--dark">
+  <!-- ===================== VÍDEOS ===================== -->
+  <section id="videos" class="section section--dark">
+    <div class="container reveal">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Em movimento</p>
+          <h2>Assista ao que produzimos.</h2>
+        </div>
+        <p class="section-head__lede">Registros reais dos nossos eventos: o showreel de shows ao vivo e a cobertura dos encontros de carros antigos.</p>
+      </div>
+
+      <div class="video-grid">
+        <figure class="video-card video-card--wide">
+          <video preload="none" playsinline poster="assets/img/video/reel-poster.jpg">
+            <source src="assets/video/showreel.mp4" type="video/mp4">
+          </video>
+          <button class="video-card__play" type="button" aria-label="Reproduzir showreel de shows ao vivo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <figcaption>
+            <span class="portfolio-card__cat">Shows ao vivo</span>
+            <span class="video-card__title">Showreel — Paradise Garage</span>
+          </figcaption>
+        </figure>
+
+        <figure class="video-card video-card--tall">
+          <video preload="none" playsinline poster="assets/img/video/carros-encontro-poster.jpg">
+            <source src="assets/video/carros-encontro.mp4" type="video/mp4">
+          </video>
+          <button class="video-card__play" type="button" aria-label="Reproduzir vídeo do encontro de carros antigos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <figcaption>
+            <span class="portfolio-card__cat">Carros antigos</span>
+            <span class="video-card__title">Encontro de clássicos</span>
+          </figcaption>
+        </figure>
+
+        <figure class="video-card video-card--tall">
+          <video preload="none" playsinline poster="assets/img/video/carros-classicos-poster.jpg">
+            <source src="assets/video/carros-classicos.mp4" type="video/mp4">
+          </video>
+          <button class="video-card__play" type="button" aria-label="Reproduzir vídeo de carros clássicos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <figcaption>
+            <span class="portfolio-card__cat">Carros antigos</span>
+            <span class="video-card__title">Clássicos na pista</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section id="contato" class="section section--tinted">
     <div class="container contato reveal">
-      <p class="eyebrow">Fale conosco</p>
-      <h2>Vamos produzir o seu próximo evento.</h2>
+      <div class="contato__text">
+        <p class="eyebrow">Fale conosco</p>
+        <h2>Vamos produzir o seu próximo evento.</h2>
+        <p class="lede">Conte o que você tem em mente — um show, uma campanha, um encontro de carros ou uma ativação de marca. Respondemos com uma proposta clara e um cronograma realista.</p>
+      </div>
       <!-- EDITAR: confirmar número de WhatsApp, e-mail e redes sociais reais da Murupi antes de publicar. -->
-      <div class="contato__links">
-        <a class="btn btn--primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn btn--ghost" href="mailto:contato@murupiproducoes.com.br">contato@murupiproducoes.com.br</a>
-        <a class="btn btn--ghost" href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">@murupiproducoes</a>
+      <div class="contact-card">
+        <a class="contact-card__row" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+          <span class="contact-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.7c1.8 1 3.9 1.5 6.2 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-4-.6-5.6-1.6l-.4-.2-4.6 1 1-4.5-.3-.5C5 17.4 4.4 16.2 4.4 15 4.4 9.7 9.7 5.4 16 5.4S27.6 9.7 27.6 15 22.3 24.8 16 24.8zm6.1-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C13.4 10.5 13 9.4 12.8 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4z"/></svg></span>
+          <span class="contact-card__body"><span class="contact-card__label">WhatsApp</span><span class="contact-card__value">Chamar no WhatsApp</span></span>
+          <span class="contact-card__arrow">&rarr;</span>
+        </a>
+        <a class="contact-card__row" href="mailto:contato@murupiproducoes.com.br">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <span class="contact-card__body"><span class="contact-card__label">E-mail</span><span class="contact-card__value">contato@murupiproducoes.com.br</span></span>
+          <span class="contact-card__arrow">&rarr;</span>
+        </a>
+        <a class="contact-card__row" href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">
+          <span class="contact-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+          <span class="contact-card__body"><span class="contact-card__label">Instagram</span><span class="contact-card__value">@murupiproducoes</span></span>
+          <span class="contact-card__arrow">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -169,14 +293,36 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container site-footer__inner">
-    <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="120" height="34" class="footer-logo">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img src="assets/img/brand/logo.svg" alt="Murupi Produções" width="150" height="47" class="footer-logo">
+      <p>Produção de eventos e publicidade. Shows, campanhas, eventos automotivos e ativação de marca.</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Rodapé">
+      <p class="site-footer__heading">Navegação</p>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#o-que-fazemos">O Que Fazemos</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="site-footer__contact">
+      <p class="site-footer__heading">Contato</p>
+      <a href="mailto:contato@murupiproducoes.com.br">contato@murupiproducoes.com.br</a>
+      <a href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">@murupiproducoes</a>
+      <a href="https://www.murupiproducoes.com.br">www.murupiproducoes.com.br</a>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
     <p>&copy; <span id="ano-atual"></span> Murupi Produções. Todos os direitos reservados.</p>
+    <a href="#topo" class="site-footer__top">Voltar ao topo &uarr;</a>
   </div>
 </footer>
 
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox__close" id="lightbox-close" aria-label="Fechar">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Imagem anterior">&#8249;</button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Próxima imagem">&#8250;</button>
   <figure class="lightbox__content">
     <img id="lightbox-img" src="" alt="">
     <figcaption id="lightbox-caption"></figcaption>

@@ -79,7 +79,7 @@
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
@@ -89,15 +89,24 @@
   /* ---- Portfólio: montar cards a partir de PORTFOLIO_ITEMS ---- */
   var grid = document.getElementById("portfolio-grid");
   var CATEGORY_LABELS = { shows: "Shows", campanhas: "Campanhas", carros: "Carros Antigos" };
+  var FEATURED_ITEM = {
+    imagem: "assets/img/portfolio/carros-1.jpg",
+    titulo: "Um encontro, centenas de clássicos",
+    descricao: "Cobertura completa de um dos maiores encontros de carros antigos já produzidos pela Murupi."
+  };
 
   function buildCards() {
     if (!grid || typeof PORTFOLIO_ITEMS === "undefined") return;
     var frag = document.createDocumentFragment();
 
-    PORTFOLIO_ITEMS.forEach(function (item) {
+    PORTFOLIO_ITEMS.forEach(function (item, index) {
       var card = document.createElement("div");
       card.className = "portfolio-card";
       card.dataset.categoria = item.categoria;
+      card.dataset.index = String(index);
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-label", "Ampliar: " + item.titulo);
 
       var img = document.createElement("img");
       img.src = item.imagem;
@@ -120,8 +129,16 @@
 
       card.appendChild(overlay);
 
-      card.addEventListener("click", function () {
-        openLightbox(item);
+      var hint = document.createElement("span");
+      hint.className = "portfolio-card__hint";
+      hint.setAttribute("aria-hidden", "true");
+      hint.textContent = "+";
+      card.appendChild(hint);
+
+      var open = function () { openLightbox(index); };
+      card.addEventListener("click", open);
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
       });
 
       frag.appendChild(card);
@@ -149,19 +166,49 @@
     });
   });
 
-  /* ---- Lightbox ---- */
+  /* ---- Lightbox (com navegação entre os itens visíveis) ---- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightbox-img");
   var lightboxCaption = document.getElementById("lightbox-caption");
   var lightboxClose = document.getElementById("lightbox-close");
+  var lightboxPrev = document.getElementById("lightbox-prev");
+  var lightboxNext = document.getElementById("lightbox-next");
+  var currentIndex = -1;
 
-  function openLightbox(item) {
-    if (!lightbox) return;
+  function visibleIndexes() {
+    var list = [];
+    document.querySelectorAll(".portfolio-card:not(.is-hidden)").forEach(function (card) {
+      list.push(parseInt(card.dataset.index, 10));
+    });
+    return list;
+  }
+
+  function showItem(item) {
     lightboxImg.src = item.imagem;
     lightboxImg.alt = item.titulo;
     lightboxCaption.textContent = item.titulo + " — " + item.descricao;
+  }
+
+  // index: posição em PORTFOLIO_ITEMS, ou -1 para o item em destaque
+  function openLightbox(index) {
+    if (!lightbox) return;
+    currentIndex = index;
+    showItem(index === -1 ? FEATURED_ITEM : PORTFOLIO_ITEMS[index]);
+    var hasNav = index !== -1 && visibleIndexes().length > 1;
+    lightboxPrev.hidden = !hasNav;
+    lightboxNext.hidden = !hasNav;
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
+  }
+
+  function stepLightbox(direction) {
+    if (currentIndex === -1) return;
+    var list = visibleIndexes();
+    var pos = list.indexOf(currentIndex);
+    if (pos === -1) return;
+    var nextPos = (pos + direction + list.length) % list.length;
+    currentIndex = list[nextPos];
+    showItem(PORTFOLIO_ITEMS[currentIndex]);
   }
 
   function closeLightbox() {
@@ -172,30 +219,51 @@
 
   var featuredCase = document.getElementById("featured-case");
   if (featuredCase) {
-    var openFeatured = function () {
-      openLightbox({
-        imagem: "assets/img/portfolio/carros-1.jpg",
-        titulo: "Um encontro, centenas de clássicos",
-        descricao: "Cobertura completa de um dos maiores encontros de carros antigos já produzidos pela Murupi."
-      });
-    };
+    var openFeatured = function () { openLightbox(-1); };
     featuredCase.addEventListener("click", openFeatured);
     featuredCase.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openFeatured();
-      }
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openFeatured(); }
     });
   }
 
   if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener("click", function () { stepLightbox(-1); });
+  if (lightboxNext) lightboxNext.addEventListener("click", function () { stepLightbox(1); });
   if (lightbox) {
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) closeLightbox();
     });
   }
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && lightbox && !lightbox.hidden) closeLightbox();
+    if (!lightbox || lightbox.hidden) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") stepLightbox(-1);
+    if (e.key === "ArrowRight") stepLightbox(1);
+  });
+
+  /* ---- Vídeos: botão de play sobre o pôster; só um vídeo toca por vez ---- */
+  var videoCards = document.querySelectorAll(".video-card");
+  videoCards.forEach(function (card) {
+    var video = card.querySelector("video");
+    var play = card.querySelector(".video-card__play");
+    if (!video || !play) return;
+
+    play.addEventListener("click", function () {
+      videoCards.forEach(function (other) {
+        if (other === card) return;
+        var v = other.querySelector("video");
+        if (v && !v.paused) v.pause();
+      });
+      card.classList.add("is-playing");
+      video.controls = true;
+      video.play();
+    });
+
+    video.addEventListener("ended", function () {
+      card.classList.remove("is-playing");
+      video.controls = false;
+      video.load();
+    });
   });
 
   buildCards();

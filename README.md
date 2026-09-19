@@ -13,7 +13,26 @@ js/main.js              → menu mobile, filtros do portfólio, lightbox
 js/portfolio-data.js    → lista de cases do portfólio (ver abaixo)
 assets/img/brand/       → logo e favicon
 assets/img/portfolio/   → fotos do portfólio
+assets/img/video/       → capas (pôsteres) dos vídeos
+assets/img/og-image.jpg → imagem de compartilhamento (WhatsApp, redes sociais)
+assets/video/           → vídeos (loop do topo + showreel + eventos)
 ```
+
+## Vídeos
+
+- `hero-loop.mp4` — trecho de 8s, sem áudio, que roda em loop no topo da página.
+- `showreel.mp4`, `carros-encontro.mp4`, `carros-classicos.mp4` — vídeos da seção
+  "Vídeos", com áudio; só carregam quando o visitante clica em play.
+
+Para trocar um vídeo: exporte em MP4 (H.264), 1280px de largura para horizontais,
+e substitua o arquivo mantendo o nome. Atualize também a capa correspondente em
+`assets/img/video/`. Vídeos acima de ~15 MB deixam a página pesada.
+
+## Ao publicar no domínio final
+
+No `index.html`, troque as URLs `https://murupi-producoes.vercel.app/...` das tags
+`og:image` e `og:url` (topo do arquivo) pelo endereço definitivo — é o que define a
+prévia do link quando o site é compartilhado no WhatsApp ou redes sociais.
 
 ## Como adicionar um novo case ao portfólio
 
