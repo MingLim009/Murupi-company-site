@@ -525,7 +525,7 @@ p{margin:0 0 1em}
   text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;font-weight:700;color:var(--gold);margin:0 0 1.2em;
 }
 .site-footer__nav,.site-footer__contact{display:grid;gap:.6em;align-content:start}
-.site-footer__nav a,.site-footer__contact a{color:var(--cream-dim);text-decoration:none;font-size:.95rem;width:fit-content}
+.site-footer__nav a,.site-footer__contact a,.site-footer__contact span{color:var(--cream-dim);text-decoration:none;font-size:.95rem;width:fit-content}
 .site-footer__nav a:hover,.site-footer__contact a:hover{color:var(--gold)}
 .site-footer__bottom{
   display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;

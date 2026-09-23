@@ -23,17 +23,15 @@ assets/img/og-image.jpg → imagem de compartilhamento (WhatsApp, redes sociais)
 assets/video/           → vídeos (loop do topo + showreel + eventos)
 ```
 
-## Formulário de contato
+## Contato no site
 
-O formulário na seção "Fale Conosco" não envia dados para nenhum servidor — ele
-monta o texto digitado e abre o WhatsApp (botão "Enviar pelo WhatsApp") ou o
-aplicativo de e-mail (botão "Enviar por e-mail") já com a mensagem pronta. Isso
-mantém o site 100% estático, sem precisar de backend, conta em serviço de
-formulário ou custo extra.
+- **WhatsApp:** (21) 99554-1972 (`5521995541972` nos links `wa.me` e no `data-whatsapp` do formulário)
+- **E-mail:** `contato@murupiproducoes.com.br` (atualizar se o endereço definitivo no Zoho for outro)
+- **Instagram:** @murupiproducoes
 
-O número de WhatsApp usado pelo formulário está no atributo `data-whatsapp` da
-tag `<form id="contact-form">`, em `index.html` — é o mesmo número que deve ser
-atualizado em todos os outros lugares marcados com `EDITAR`.
+O formulário em "Fale Conosco" não envia dados para nenhum servidor — monta a
+mensagem e abre o WhatsApp ou o aplicativo de e-mail. Assim o site permanece
+100% estático, sem backend.
 
 ## FAQ
 
@@ -44,11 +42,9 @@ pergunta, copie um bloco inteiro e troque o texto do `<summary>` (pergunta) e do
 
 ## Política de Privacidade e Termos de Uso
 
-São rascunhos diretos e honestos sobre o que o site faz hoje (o formulário não
-guarda dados em servidor — só abre o WhatsApp/e-mail). Se no futuro o site
-ganhar um formulário que salva dados, uma newsletter ou uma ferramenta de
-analytics, essas páginas precisam ser atualizadas — idealmente com apoio
-jurídico, já que envolvem LGPD.
+Descrevem o que o site faz hoje (formulário só abre WhatsApp/e-mail). Se no
+futuro o site ganhar formulário que salva dados, newsletter ou analytics, essas
+páginas precisam ser atualizadas — idealmente com apoio jurídico (LGPD).
 
 ## Vídeos
 
@@ -60,11 +56,18 @@ Para trocar um vídeo: exporte em MP4 (H.264), 1280px de largura para horizontai
 e substitua o arquivo mantendo o nome. Atualize também a capa correspondente em
 `assets/img/video/`. Vídeos acima de ~15 MB deixam a página pesada.
 
-## Ao publicar no domínio final
+## Domínio e SEO
 
-No `index.html`, troque as URLs `https://murupi-producoes.vercel.app/...` das tags
-`og:image` e `og:url` (topo do arquivo) pelo endereço definitivo — é o que define a
-prévia do link quando o site é compartilhado no WhatsApp ou redes sociais.
+O domínio `murupiproducoes.com.br` já está reservado, mas o DNS ainda não aponta
+para nenhuma hospedagem — por isso URLs canônicas, Open Graph, JSON-LD,
+`sitemap.xml` e `robots.txt` apontam hoje para o endereço do Vercel
+(`https://murupi-producoes.vercel.app/`), que é o que está realmente no ar. Sem
+isso, o preview de link no WhatsApp/redes sociais quebraria.
+
+Assim que o domínio for publicado (DNS apontado para a hospedagem final), troque
+essas URLs pelo domínio definitivo — procure por `<!-- EDITAR -->` em
+`index.html`, `robots.txt` e `sitemap.xml`, e reative o link no rodapé
+(`site-footer__contact`, hoje um `<span>` em vez de `<a>`).
 
 ## Como adicionar um novo case ao portfólio
 
@@ -86,21 +89,6 @@ nenhum outro arquivo — o card aparece automaticamente na seção Portfólio, d
 do filtro certo.
 
 **Fotos:** use JPG, largura entre 1200–1600px já é suficiente para tela cheia.
-Fotos muito grandes deixam o site lento.
-
-## Pontos marcados como `EDITAR` no `index.html`
-
-Alguns trechos ainda dependem de confirmação com a cliente antes de publicar —
-procure por `<!-- EDITAR: ... -->` no código:
-
-- Texto de "Quem Somos" (missão/valores) — redigido a partir do que foi
-  conversado; vale confirmar com a Murupi antes de publicar.
-- WhatsApp, e-mail e Instagram reais, na seção de Contato (hoje estão com
-  valores de exemplo).
-
-## Fotos do portfólio em resolução melhor
-
-As imagens usadas hoje foram extraídas dos vídeos e do material enviado pelo
-cliente. Quando chegarem fotos em resolução maior, é só substituir o arquivo
-correspondente dentro de `assets/img/portfolio/` mantendo o mesmo nome (ou
-atualizar o caminho em `portfolio-data.js`).
+Fotos muito grandes deixam o site lento. Quando chegarem fotos em resolução
+maior, substitua o arquivo mantendo o mesmo nome (ou atualize o caminho em
+`portfolio-data.js`).

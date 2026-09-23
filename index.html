@@ -6,7 +6,10 @@
 <title>Murupi Produções — Eventos e Publicidade</title>
 <meta name="description" content="Murupi Produções: produção de shows e eventos ao vivo, campanhas publicitárias, eventos automotivos e ativação de marca.">
 <meta name="theme-color" content="#000000">
-<!-- EDITAR: quando o site for para o domínio final, trocar as URLs abaixo por https://www.murupiproducoes.com.br/... -->
+<!-- EDITAR: murupiproducoes.com.br ainda não está no ar (DNS não aponta para lugar nenhum).
+     Trocar as URLs abaixo (og:image, og:url, canonical, JSON-LD, sitemap.xml e robots.txt)
+     de volta para o domínio final assim que o domínio estiver publicado. Até lá, usar a URL
+     do Vercel garante que o preview de link (WhatsApp, redes sociais) funcione. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Murupi Produções — Eventos e Publicidade">
 <meta property="og:description" content="Shows, campanhas e ativações de marca — do primeiro rascunho ao dia do evento.">
@@ -21,7 +24,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
-<!-- EDITAR: revisar endereço/telefone abaixo (LocalBusiness) quando esses dados forem confirmados com a Murupi. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,6 +33,7 @@
   "url": "https://murupi-producoes.vercel.app/",
   "image": "https://murupi-producoes.vercel.app/assets/img/og-image.jpg",
   "logo": "https://murupi-producoes.vercel.app/assets/img/brand/icon-512.png",
+  "telephone": "+5521995541972",
   "email": "contato@murupiproducoes.com.br",
   "sameAs": ["https://instagram.com/murupiproducoes"],
   "address": {
@@ -158,7 +161,6 @@
       <div class="section-grid__text">
         <p class="eyebrow"><span class="eyebrow__num">(01)</span><span class="eyebrow__text">Quem Somos</span></p>
         <h2>Produção com histórico, feita sob medida.</h2>
-        <!-- EDITAR: confirmar com a Murupi o texto final de missão/valores e ajustar conforme a identidade da empresa. -->
         <p class="lede">A Murupi Produções nasceu do trabalho de campo: mais de 200 shows ao vivo produzidos com artistas e bandas cover, uma campanha de utilidade pública para a Prefeitura do Rio e uma agenda constante de eventos automotivos, incluindo a linha Madame Boxer.</p>
         <p>É essa experiência prática — de palco, rua e pista — que orienta cada projeto novo. Cada produção passa pelas mesmas mãos, do planejamento à execução no dia do evento, o que mantém o padrão de qualidade constante e a comunicação direta com quem contrata.</p>
         <ul class="values">
@@ -346,7 +348,6 @@
       </div>
 
       <div class="faq-list">
-        <!-- EDITAR: revisar respostas com a Murupi, principalmente prazo de resposta, região de atuação e antecedência mínima. -->
         <details class="faq-item">
           <summary>Vocês atendem eventos fora do Rio de Janeiro?</summary>
           <p>Nossa base é o Rio de Janeiro, mas avaliamos projetos em outras cidades dependendo da escala do evento. Conte os detalhes pelo formulário abaixo e respondemos com o que é possível.</p>
@@ -383,8 +384,7 @@
       </div>
 
       <div class="contato-grid">
-        <!-- EDITAR: número de WhatsApp abaixo (mesmo usado no botão flutuante e no card ao lado). -->
-        <form class="contact-form" id="contact-form" data-whatsapp="5500000000000" data-email="contato@murupiproducoes.com.br">
+        <form class="contact-form" id="contact-form" data-whatsapp="5521995541972" data-email="contato@murupiproducoes.com.br">
           <div class="contact-form__row">
             <label for="cf-nome">Nome</label>
             <input type="text" id="cf-nome" name="nome" required autocomplete="name">
@@ -416,9 +416,9 @@
         </form>
 
         <div class="contact-card">
-          <a class="contact-card__row" href="https://wa.me/5500000000000" target="_blank" rel="noopener">
+          <a class="contact-card__row" href="https://wa.me/5521995541972" target="_blank" rel="noopener">
             <span class="contact-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.7c1.8 1 3.9 1.5 6.2 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-4-.6-5.6-1.6l-.4-.2-4.6 1 1-4.5-.3-.5C5 17.4 4.4 16.2 4.4 15 4.4 9.7 9.7 5.4 16 5.4S27.6 9.7 27.6 15 22.3 24.8 16 24.8zm6.1-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C13.4 10.5 13 9.4 12.8 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4z"/></svg></span>
-            <span class="contact-card__body"><span class="contact-card__label">WhatsApp</span><span class="contact-card__value">Chamar no WhatsApp</span></span>
+            <span class="contact-card__body"><span class="contact-card__label">WhatsApp</span><span class="contact-card__value">(21) 99554-1972</span></span>
             <span class="contact-card__arrow">&rarr;</span>
           </a>
           <a class="contact-card__row" href="mailto:contato@murupiproducoes.com.br">
@@ -455,9 +455,11 @@
     </nav>
     <div class="site-footer__contact">
       <p class="site-footer__heading">Contato</p>
+      <a href="https://wa.me/5521995541972" target="_blank" rel="noopener">WhatsApp (21) 99554-1972</a>
       <a href="mailto:contato@murupiproducoes.com.br">contato@murupiproducoes.com.br</a>
       <a href="https://instagram.com/murupiproducoes" target="_blank" rel="noopener">@murupiproducoes</a>
-      <a href="https://www.murupiproducoes.com.br">www.murupiproducoes.com.br</a>
+      <!-- EDITAR: transformar em link (<a href="https://www.murupiproducoes.com.br">) quando o domínio estiver no ar. -->
+      <span>www.murupiproducoes.com.br</span>
     </div>
   </div>
   <div class="container site-footer__bottom">
@@ -480,8 +482,7 @@
   </figure>
 </div>
 
-<!-- EDITAR: confirmar número de WhatsApp antes de publicar (mesmo número usado na seção Contato). -->
-<a class="whatsapp-float" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/5521995541972" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="#000000" d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.5 1.8 6.4L4 29l7.8-1.7c1.8 1 3.9 1.5 6.2 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-4-.6-5.6-1.6l-.4-.2-4.6 1 1-4.5-.3-.5C5 17.4 4.4 16.2 4.4 15 4.4 9.7 9.7 5.4 16 5.4S27.6 9.7 27.6 15 22.3 24.8 16 24.8zm6.1-8.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.7-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5C13.4 10.5 13 9.4 12.8 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.4z"/></svg>
 </a>
 

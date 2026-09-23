@@ -1,4 +1,4 @@
-# EDITAR: ao publicar em murupiproducoes.com.br, trocar a URL do Sitemap abaixo.
+# EDITAR: trocar a URL do Sitemap abaixo quando murupiproducoes.com.br estiver no ar.
 User-agent: *
 Allow: /
 
